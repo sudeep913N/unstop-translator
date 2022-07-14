@@ -1,5 +1,6 @@
 import PyPDF2
 from googletrans import Translator
+exam=[]
 pdfFileObj = open('tranlitrated_test.pdf', 'rb')
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 x=pdfReader.numPages
@@ -9,5 +10,11 @@ translator=Translator()
 dfg=file.splitlines()
 for p in dfg:
     translated=translator.translate(text=p,dest='en')
+    exam.append(translated.text)
     print(translated.text)
 pdfFileObj.close()
+drop=open('write.txt','a', encoding="utf-8")
+for i in exam:
+    drop.writelines(i)
+    drop.write("\n")
+drop.close()
