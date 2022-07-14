@@ -1,7 +1,8 @@
 import PyPDF2
 from googletrans import Translator
 exam=[]
-pdfFileObj = open('tranlitrated_test.pdf', 'rb')
+d=input("Enter the path address of the file")
+pdfFileObj = open(d, 'rb')
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 x=pdfReader.numPages
 pageObj = pdfReader.getPage(0)
