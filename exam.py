@@ -7,7 +7,7 @@ pageObj = pdfReader.getPage(0)
 file=pageObj.extractText()
 translator=Translator()
 for p in range(x):
-    translated=translator.translate(text=file,dest='te')
+    translated=translator.translate(text=file,dest='en')
     data=str(translated)
 pdfFileObj.close()
 drop=open('write.txt','a', encoding="utf-8")
